@@ -24,6 +24,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin
 public class EduTeacherController<teacherQ> {
 
     @Autowired
@@ -85,7 +86,7 @@ public class EduTeacherController<teacherQ> {
 
         IPage<EduTeacher> eduTeacherIPage = eduTeacherService.page(page, wrapper);
         long total = page.getTotal();
-        return R.ok().data("total",total).data("rows",eduTeacherIPage);
+        return R.ok().data("total",total).data("rows",eduTeacherIPage.getRecords());
     }
 
     @PostMapping("addTeacher")
