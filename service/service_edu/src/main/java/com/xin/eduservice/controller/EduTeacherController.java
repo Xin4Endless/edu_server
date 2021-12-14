@@ -83,7 +83,7 @@ public class EduTeacherController<teacherQ> {
         if(!StringUtils.isEmpty(end)){
             wrapper.le("gmt_create",end);
         }
-
+        wrapper.orderByDesc("gmt_create");
         IPage<EduTeacher> eduTeacherIPage = eduTeacherService.page(page, wrapper);
         long total = page.getTotal();
         return R.ok().data("total",total).data("rows",eduTeacherIPage.getRecords());
