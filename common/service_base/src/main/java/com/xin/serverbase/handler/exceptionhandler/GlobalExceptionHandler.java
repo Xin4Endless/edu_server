@@ -20,9 +20,9 @@ public class GlobalExceptionHandler {
         return R.error().message("接口异常");
     }
 
-    @ExceptionHandler(MyRuntimeException.class)
+    @ExceptionHandler(BizRuntimeException.class)
     @ResponseBody
-    public R error(MyRuntimeException e){
+    public R error(BizRuntimeException e){
         e.printStackTrace();
         return R.error().code(e.getCode()).message(e.getMsg());
         //return R.error().message("执行了'MyRuntimeException'异常");

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor //有参数构造函数
 @NoArgsConstructor //无参数构造函数
-public class MyRuntimeException extends java.lang.RuntimeException {
+public class BizRuntimeException extends java.lang.RuntimeException {
 
 
     private Integer code;
