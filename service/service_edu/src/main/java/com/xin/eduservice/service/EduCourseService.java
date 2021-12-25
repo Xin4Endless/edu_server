@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 public interface EduCourseService extends IService<EduCourse> {
 
     String saveCourseInfo(CourseInfoVo courseInfoVo);
+
+    CourseInfoVo getCourseInfo(String id);
+
+    boolean updateCourseInfo(CourseInfoVo courseInfoVo);
 }

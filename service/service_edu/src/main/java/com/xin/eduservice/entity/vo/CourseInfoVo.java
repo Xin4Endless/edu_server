@@ -10,6 +10,8 @@ public class CourseInfoVo {
     private String id;
     //讲师ID
     private String teacherId;
+    //课程分类父ID
+    private String subjectParentId;
     //课程分类ID
     private String subjectId;
     //课程标题

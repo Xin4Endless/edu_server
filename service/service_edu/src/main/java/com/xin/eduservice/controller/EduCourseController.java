@@ -24,10 +24,25 @@ public class EduCourseController {
     private EduCourseService eduCourseService;
 
     @PostMapping("addCourse")
-    public R addCourse(@RequestBody CourseInfoVo courseInfoVo){
+    public R addCourse(@RequestBody CourseInfoVo courseInfoVo) {
         String id = eduCourseService.saveCourseInfo(courseInfoVo);
-        return R.ok().data("courseid",id);
+        return R.ok().data("courseid", id);
     }
 
+    @GetMapping("getCourseInfo/{id}")
+    public R getCourseInfo(@PathVariable String id) {
+        CourseInfoVo info = eduCourseService.getCourseInfo(id);
+        return R.ok().data("info", info);
+    }
+
+    @PostMapping("updateCourseInfo")
+    public R updateCourseInfo(@RequestBody CourseInfoVo courseInfoVo) {
+        boolean b = eduCourseService.updateCourseInfo(courseInfoVo);
+        if(b){
+            return R.ok();
+        }else{
+            return R.error();
+        }
+    }
 }
 
