@@ -2,6 +2,9 @@ package com.xin.eduservice.mapper;
 
 import com.xin.eduservice.entity.EduChapter;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.xin.eduservice.entity.vo.EduChapterListVo;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface EduChapterMapper extends BaseMapper<EduChapter> {
 
+    List<EduChapterListVo> getChapterList(String coruseId);
 }
